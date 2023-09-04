@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+
+{% block contenidoQueCambia %}
+    <h1>Resultado de busqueda</h1>
+
+    <ul>
+
+        {% for nombre in nombres %}
+            <li>
+                {{cliente.nombre}} - {{cliente.apellido}}
+             </li>
+        {% endfor %}
+            
+
+
+
+
+    </ul>     
+{% endblock contenidoQueCambia %}

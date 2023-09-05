@@ -5,8 +5,10 @@
     <h1>Clientes</h1>
 
     
-    {% for Clientes in lista_clientes %}
-        <li>{{Clientes}}</li>
+    {% for cliente in clientes %}
+        <li>
+            {{cliente.nombre}} - {{cliente.apellido}}
+        </li>
         
     {% endfor %}
         

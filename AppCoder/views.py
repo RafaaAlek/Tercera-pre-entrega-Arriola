@@ -1,7 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 from .models import Producto, Cliente, Categoria
-from .forms import Categoriaformulario, Clienteformulario
+from .forms import Categoriaformulario, Productoformulario, Clienteformulario
 
 # Create your views here.
 def producto(req, nombre, cantidad):
@@ -15,9 +15,21 @@ def producto(req, nombre, cantidad):
 
 def lista_productos(req):
 
-    lista = Producto.objects.all()
+    productos = Producto.objects.all()
 
-    return render(req, "lista_productos.html", {"lista_productos": lista})
+    return render(req, "lista_productos.html", {"lista_productos": productos})
+
+def lista_categorias(req):
+
+    categorias = Categoria.objects.all()
+
+    return render(req, "lista_categorias.html", {"lista_categorias": categorias})
+
+def lista_clientes(req):
+
+    clientes = Cliente.objects.all()
+
+    return render(req, "lista_clientes.html", {"lista_clientes": clientes})
 
 
 def Inicio(req):
@@ -36,6 +48,27 @@ def Productos(req):
 def Clientes(req):
 
     return render(req, "clientes.html")
+
+def Producto_formulario(req):
+
+    if req.method == 'POST':
+
+        miFormulario = Productoformulario(req.POST)
+
+        if miFormulario.is_valid():
+
+            data = miFormulario.cleaned_data
+
+            producto = Producto(nombre=data["nombre"], cantidad=data["cantidad"])
+            producto.save()
+            return render(req, "inicio.html", {"mensaje": "Productos ingresados con exito"})
+        else:
+            return render(req, "inicio.html", {"mensaje": "Formulario invalido"})
+    else:
+
+        miFormulario = Productoformulario()
+
+        return render(req, "producto_fomulario.html", {"miFormulario": miFormulario})
 
 def Categoria_formulario(req):
 

@@ -2,16 +2,13 @@
 
 
 {% block contenidoQueCambia %}
+    <h1>Productos</h1>
 
-    <li>
-
+    
+    {% for producto in lista_productos%}
+        <li>{{producto.nombre}}</li>
         
-        {% for producto in lista_productos %}
-
-            {{lista_productos}}
-            
-        {% endfor %}
-            
-    </li>
+    {% endfor %}
+        
     
 {% endblock contenidoQueCambia %}

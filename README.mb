@@ -1,0 +1,10 @@
+Hola!
+
+La App consta de 3 modelos, cliente, categoria y producto.
+para ver los productos, se debe ingresar en urls.py y copiar el path de uno de los modelos a revisar.
+para ingresar datos en la base de datos, se debe ingresar en urls.py y copiar el path de cliente-formulario, categoria- formulario o producto formulario e ingresar datos solicitados.
+para poder hacer una busqueda, se debe ingresar a la url de busqueda-apellido e ingresar el apellido solicitado.
+para ingresar al superusuario, se debe ingresar en la url admin/, con los siguientes datos, usuario: Rafael pass: Coderhouse2023.
+no pude integrar en los navbar los datos de la base de datos, favor correjir :(.
+
+Gracias.

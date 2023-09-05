@@ -9,4 +9,11 @@ class Clienteformulario(forms.Form):
 class Categoriaformulario(forms.Form):
 
     nombre = forms.CharField(required=True)
+
+class Productoformulario(forms.Form):
+
+    nombre = forms.CharField(required=True)
+    cantidad = forms.IntegerField()
+
+
     
